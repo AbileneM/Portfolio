@@ -27,31 +27,21 @@ export async function createProjet(request) {
   return NextResponse.json(projet, { status: 201 });
 }
 
-export async function getProjetById(request, context) {
-  const { id } = await context.params;
-
-  const projet = await Projet.findByPk(id);
+export async function getProjetById(_, { params }) {
+  const projet = await Projet.findByPk(params.id);
 
   if (!projet) {
-    return NextResponse.json(
-      { message: "Projet introuvable" },
-      { status: 404 }
-    );
+    return NextResponse.json({ message: "Projet introuvable" }, { status: 404 });
   }
 
   return NextResponse.json(projet);
 }
 
-export async function updateProjet(request, context) {
-  const { id } = await context.params;
-
-  const projet = await Projet.findByPk(id);
+export async function updateProjet(request, { params }) {
+  const projet = await Projet.findByPk(params.id);
 
   if (!projet) {
-    return NextResponse.json(
-      { message: "Projet introuvable" },
-      { status: 404 }
-    );
+    return NextResponse.json({ message: "Projet introuvable" }, { status: 404 });
   }
 
   const body = await request.json();
@@ -60,21 +50,13 @@ export async function updateProjet(request, context) {
   return NextResponse.json(projet);
 }
 
-export async function deleteProjet(request, context) {
-  const { id } = await context.params;
-
-  const projet = await Projet.findByPk(id);
+export async function deleteProjet(_, { params }) {
+  const projet = await Projet.findByPk(params.id);
 
   if (!projet) {
-    return NextResponse.json(
-      { message: "Projet introuvable" },
-      { status: 404 }
-    );
+    return NextResponse.json({ message: "Projet introuvable" }, { status: 404 });
   }
 
   await projet.destroy();
-
-  return NextResponse.json({
-    message: "Projet supprimé avec succès",
-  });
+  return NextResponse.json({ message: "Projet supprimé" });
 }
