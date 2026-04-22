@@ -7,21 +7,28 @@ import { setUser } from "@/store/slices/authSlice";
 import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
-  const [form, setForm] = useState({ email: "", password: "" });
+  const [form, setForm] = useState({
+    email: "",
+    password: "",
+  });
+
   const [errors, setErrors] = useState({});
   const dispatch = useDispatch();
   const router = useRouter();
 
   const validate = () => {
     const newErrors = {};
+
     if (!form.email.trim()) newErrors.email = "Email obligatoire";
     if (!form.password.trim()) newErrors.password = "Mot de passe obligatoire";
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!validate()) return;
 
     try {
@@ -29,42 +36,64 @@ export default function LoginPage() {
       dispatch(setUser(res.data.user));
       router.push("/");
     } catch (error) {
-        setErrors({ api: error.response?.data?.message || "Erreur de connexion" });
+      setErrors({
+        api: error.response?.data?.message || "Erreur de connexion",
+      });
     }
   };
 
   return (
-    <section className="mx-auto max-w-md rounded-2xl bg-white p-8 shadow-md">
-      <h2 className="mb-6 text-2xl font-bold">Connexion</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <input
-            type="email"
-            placeholder="Email"
-            value={form.email}
-            onChange={(e) => setForm({ ...form, email: e.target.value })}
-            className="w-full rounded-lg border px-4 py-3"
-          />
+    <section className="mx-auto flex min-h-[70vh] max-w-7xl items-center justify-center px-6 py-16">
+      <div className="w-full max-w-lg rounded-[32px] bg-white p-10 shadow-lg ring-1 ring-slate-200">
+        <h1 className="mb-3 text-4xl font-bold text-slate-900">Connexion</h1>
 
-          {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
-        </div>
+        <p className="mb-8 text-slate-600">
+          Connectez-vous pour accéder au portfolio.
+        </p>
 
-        <div>
-          <input
-            type="password"
-            placeholder="Mot de passe"
-            value={form.password}
-            onChange={(e) => setForm({ ...form, password: e.target.value })}
-            className="w-full rounded-lg border px-4 py-3"
-          />
-          {errors.password && <p className="mt-1 text-sm text-red-600">{errors.password}</p>}
-        </div>
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <div>
+            <input
+              type="email"
+              placeholder="Email"
+              value={form.email}
+              onChange={(e) =>
+                setForm({ ...form, email: e.target.value })
+              }
+              className="w-full rounded-2xl border border-slate-300 bg-slate-50 px-5 py-4 text-slate-900 outline-none transition focus:border-sky-700"
+            />
+            {errors.email && (
+              <p className="mt-2 text-sm text-red-600">{errors.email}</p>
+            )}
+          </div>
 
-        {errors.api && <p className="text-sm text-red-600">{errors.api}</p>}
- <button className="w-full rounded-lg bg-sky-700 py-3 text-white">
-          Se connecter
-        </button>
-      </form>
+          <div>
+            <input
+              type="password"
+              placeholder="Mot de passe"
+              value={form.password}
+              onChange={(e) =>
+                setForm({ ...form, password: e.target.value })
+              }
+              className="w-full rounded-2xl border border-slate-300 bg-slate-50 px-5 py-4 text-slate-900 outline-none transition focus:border-sky-700"
+            />
+            {errors.password && (
+              <p className="mt-2 text-sm text-red-600">{errors.password}</p>
+            )}
+          </div>
+
+          {errors.api && (
+            <p className="text-sm text-red-600">{errors.api}</p>
+          )}
+
+          <button
+            type="submit"
+            className="w-full rounded-2xl bg-sky-700 py-4 text-lg font-semibold text-white transition hover:bg-sky-800"
+          >
+            Se connecter
+          </button>
+        </form>
+      </div>
     </section>
   );
 }

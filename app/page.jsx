@@ -2,23 +2,24 @@ import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-16">
-      <div className="grid items-center gap-14 md:grid-cols-2">
+    <section>
+      {/* HERO */}
+      <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-14 md:grid-cols-2">
         <div>
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-sky-700">
             Développeuse Fullstack
           </p>
 
-          <h1 className="mb-6 text-5xl font-bold leading-tight text-slate-900 md:text-6xl">
+          <h1 className="mb-5 text-5xl font-bold leading-tight text-slate-900 md:text-6xl">
             Bonjour, je suis Abi.
           </h1>
 
-          <p className="mb-5 max-w-xl text-lg leading-8 text-slate-600">
+          <p className="mb-4 max-w-2xl text-lg leading-8 text-slate-600">
             Étudiante en programmation, passionnée par le développement web,
             les interfaces modernes et les applications fullstack.
           </p>
 
-          <p className="mb-8 max-w-2xl text-base leading-8 text-slate-500">
+          <p className="mb-8 text-base leading-8 text-slate-500">
             Compétences : Next.js, React, Tailwind CSS, Redux, Node.js,
             MySQL, SQLite, C#, Java.
           </p>
@@ -43,41 +44,49 @@ export default function HomePage() {
         <div className="flex justify-center md:justify-end">
           <div className="relative">
             <div className="absolute inset-0 rounded-full bg-sky-100 blur-3xl"></div>
+
             <img
-              src="https://via.placeholder.com/420"
-              alt="Photo de profil"
-              className="relative h-72 w-72 rounded-full border-8 border-white object-cover shadow-2xl md:h-96 md:w-96"
+              src="/abi-photo.png"
+              alt="Photo de Abi"
+              className="relative h-72 w-72 rounded-full border-8 border-white object-cover shadow-2xl md:h-80 md:w-80"
             />
           </div>
         </div>
       </div>
 
-      <div className="mt-20 grid gap-6 md:grid-cols-3">
-        <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100">
-          <h3 className="mb-3 text-xl font-semibold text-slate-900">
-            Développement Web
-          </h3>
-          <p className="text-slate-600">
-            Création d’interfaces modernes, responsive et agréables à utiliser.
-          </p>
-        </div>
+      {/* À PROPOS / COMPÉTENCES */}
+      <div className="mx-auto max-w-7xl px-6 pb-16">
+        <div className="grid gap-6 md:grid-cols-3">
+          <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <h2 className="mb-3 text-xl font-semibold text-slate-900">
+              À propos
+            </h2>
+            <p className="text-slate-600 leading-7">
+              Je suis étudiante en programmation et je développe des projets
+              web et desktop qui combinent design, logique métier et bases de
+              données.
+            </p>
+          </div>
 
-        <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100">
-          <h3 className="mb-3 text-xl font-semibold text-slate-900">
-            Fullstack
-          </h3>
-          <p className="text-slate-600">
-            Intégration frontend, backend, base de données et API dans une seule application.
-          </p>
-        </div>
+          <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <h2 className="mb-3 text-xl font-semibold text-slate-900">
+              Frontend
+            </h2>
+            <p className="text-slate-600 leading-7">
+              Création d’interfaces modernes et responsive avec Next.js, React,
+              Tailwind CSS, JavaScript et EJS.
+            </p>
+          </div>
 
-        <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100">
-          <h3 className="mb-3 text-xl font-semibold text-slate-900">
-            Projets académiques
-          </h3>
-          <p className="text-slate-600">
-            Réalisation de projets concrets avec Next.js, Node.js, SQL et Tailwind CSS.
-          </p>
+          <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <h2 className="mb-3 text-xl font-semibold text-slate-900">
+              Backend & données
+            </h2>
+            <p className="text-slate-600 leading-7">
+              Développement de logique backend, API et gestion des données avec
+              Node.js, SQL, SQLite, C# et architecture MVVM.
+            </p>
+          </div>
         </div>
       </div>
     </section>
