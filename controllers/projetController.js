@@ -26,3 +26,37 @@ export async function createProjet(request) {
 
   return NextResponse.json(projet, { status: 201 });
 }
+
+export async function getProjetById(_, { params }) {
+  const projet = await Projet.findByPk(params.id);
+
+  if (!projet) {
+    return NextResponse.json({ message: "Projet introuvable" }, { status: 404 });
+  }
+
+  return NextResponse.json(projet);
+}
+
+export async function updateProjet(request, { params }) {
+  const projet = await Projet.findByPk(params.id);
+
+  if (!projet) {
+    return NextResponse.json({ message: "Projet introuvable" }, { status: 404 });
+  }
+
+  const body = await request.json();
+  await projet.update(body);
+
+  return NextResponse.json(projet);
+}
+
+export async function deleteProjet(_, { params }) {
+  const projet = await Projet.findByPk(params.id);
+
+  if (!projet) {
+    return NextResponse.json({ message: "Projet introuvable" }, { status: 404 });
+  }
+
+  await projet.destroy();
+  return NextResponse.json({ message: "Projet supprimé" });
+}

@@ -25,7 +25,7 @@ export default function TemoignagesPage() {
         <h2 className="text-3xl font-bold">Témoignages</h2>
 
         <Link
-          href="/temoignages/nouveau"
+          href="/temoignages/new"
           className="rounded-lg bg-sky-700 px-4 py-2 text-white"
         >
           Ajouter
@@ -39,7 +39,7 @@ export default function TemoignagesPage() {
               <h3 className="font-semibold">{item.nom}</h3>
 
               <Link
-                href={`/temoignages/modifier/${item.id}`}
+                href={`/temoignages/edit/${item.id}`}
                 className="text-sm text-sky-700"
               >
                 Modifier

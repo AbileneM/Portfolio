@@ -1,8 +1,5 @@
 import { sequelize } from "@/models";
-import {
-  createTemoignage,
-  getTemoignages,
-} from "@/controllers/temoignageController";
+import { getTemoignages, createTemoignage } from "@/controllers/temoignageController";
 
 export async function GET() {
   await sequelize.sync();

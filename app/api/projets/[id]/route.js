@@ -1,21 +1,21 @@
 import { sequelize } from "@/models";
 import {
-  deleteProject,
-  getProjectById,
-  updateProject,
+  getProjetById,
+  updateProjet,
+  deleteProjet,
 } from "@/controllers/projetController";
 
 export async function GET(request, context) {
   await sequelize.sync();
-  return getProjectById(request, context);
+  return getProjetById(request, context);
 }
 
 export async function PUT(request, context) {
   await sequelize.sync();
-  return updateProject(request, context);
+  return updateProjet(request, context);
 }
 
 export async function DELETE(request, context) {
   await sequelize.sync();
-  return deleteProject(request, context);
+  return deleteProjet(request, context);
 }

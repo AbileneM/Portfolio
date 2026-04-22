@@ -1,24 +1,20 @@
-import sequelize from "@/config/db";
 import { DataTypes } from "sequelize";
+import database from "@/config/db";
 
-const Temoignage = sequelize.define("Temoignage", {
-    id: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true,
-    },
+const Temoignage = database.define(
+  "Temoignage",
+  {
     nom: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     message: {
-        type: DataTypes.TEXT,
-        allowNull: false,
+      type: DataTypes.TEXT,
+      allowNull: false,
     },
-    },
+  },
   {
-    tableName: "temoignages",
-    timestamps: true,
+    timestamps: false,
   }
 );
 

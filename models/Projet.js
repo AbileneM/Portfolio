@@ -1,12 +1,9 @@
 import { DataTypes } from "sequelize";
-import sequelize from "@/config/db";
+import database from "@/config/db";
 
-const Projet = sequelize.define("Projet", {
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true,
-    },
+const Projet = database.define(
+  "Projet",
+  {
     titre: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -16,15 +13,8 @@ const Projet = sequelize.define("Projet", {
       allowNull: false,
     },
     technologies: {
-      type: DataTypes.TEXT,
+      type: DataTypes.JSON,
       allowNull: false,
-      get() {
-        const rawValue = this.getDataValue("technologies");
-        return rawValue ? JSON.parse(rawValue) : [];
-      },
-      set(value) {
-        this.setDataValue("technologies", JSON.stringify(value));
-      },
     },
     image: {
       type: DataTypes.STRING,
@@ -35,9 +25,8 @@ const Projet = sequelize.define("Projet", {
       allowNull: true,
     },
   },
-{
-    tableName: "projects",
-    timestamps: true,
+  {
+    timestamps: false,
   }
 );
 
