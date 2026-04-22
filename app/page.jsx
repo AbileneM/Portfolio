@@ -32,12 +32,12 @@ export default function HomePage() {
               Voir mes projets
             </Link>
 
-            <Link
-              href="/inscription"
-              className="rounded-full border border-slate-300 px-6 py-3 text-slate-700 transition hover:border-sky-700 hover:text-sky-700"
-            >
-              Me contacter
-            </Link>
+           <a
+  href="mailto:tonemail@email.com"
+  className="rounded-full border border-slate-300 px-6 py-3 text-slate-700 transition hover:border-slate-400 hover:bg-slate-100"
+>
+  Me contacter
+</a>
           </div>
         </div>
 

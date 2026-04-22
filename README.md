@@ -15,6 +15,7 @@ Le portfolio permet de :
 ---
 
 ## Technologies utilisées
+On démarre le projet avec 'npm run dev'
 
 ### Frontend
 - Next.js
