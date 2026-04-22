@@ -2,30 +2,37 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import TemoignageForm from "@/components/TemoignageForm";
 
-export default function EditTemoignagePage({ params }) {
+export default function EditTemoignagePage() {
   const [form, setForm] = useState({
     nom: "",
     message: "",
   });
-
   const [errors, setErrors] = useState({});
   const router = useRouter();
+  const params = useParams();
 
   useEffect(() => {
     const fetchOne = async () => {
-      const res = await axios.get(`/api/temoignages/${params.id}`);
-
-      setForm({
-        nom: res.data.nom || "",
-        message: res.data.message || "",
-      });
+      try {
+        const res = await axios.get(`/api/temoignages/${params.id}`);
+        setForm({
+          nom: res.data.nom || "",
+          message: res.data.message || "",
+        });
+      } catch (error) {
+        setErrors({
+          api: error.response?.data?.message || "Erreur de chargement",
+        });
+      }
     };
 
-    fetchOne();
-  }, [params.id]);
+    if (params?.id) {
+      fetchOne();
+    }
+  }, [params]);
 
   const validate = () => {
     const newErrors = {};
