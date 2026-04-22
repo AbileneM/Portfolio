@@ -14,7 +14,7 @@ const Temoignage = database.define(
     },
   },
   {
-    timestamps: false,
+    timestamps: true,
   }
 );
 
