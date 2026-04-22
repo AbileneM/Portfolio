@@ -10,17 +10,17 @@ export default function HomePage() {
             Développeuse Fullstack
           </p>
 
-          <h1 className="mb-5 text-5xl font-bold leading-tight text-slate-900 md:text-6xl">
-            Bonjour, je suis Abi.
+          <h1 className="mb-5 text-5xl font-bold leading-tight text-slate-900 md:text-5xl">
+            Bonjour, je suis Abilène.
           </h1>
 
           <p className="mb-4 max-w-2xl text-lg leading-8 text-slate-600">
-            Étudiante en programmation, passionnée par le développement web,
-            les interfaces modernes et les applications fullstack.
+            Étudiante en programmation informatique, passionnée par le développement web,
+            les interfaces modernes et la gestion de projets.
           </p>
 
           <p className="mb-8 text-base leading-8 text-slate-500">
-            Compétences : Next.js, React, Tailwind CSS, Redux, Node.js,
+            Compétences : Next.js, React, XML, Redux, Node.js,
             MySQL, SQLite, C#, Java.
           </p>
 
@@ -46,7 +46,7 @@ export default function HomePage() {
             <div className="absolute inset-0 rounded-full bg-sky-100 blur-3xl"></div>
 
             <img
-              src="/abi-photo.png"
+              src="/images/abi-photo.png"
               alt="Photo de Abi"
               className="relative h-72 w-72 rounded-full border-8 border-white object-cover shadow-2xl md:h-80 md:w-80"
             />
@@ -55,40 +55,55 @@ export default function HomePage() {
       </div>
 
       {/* À PROPOS / COMPÉTENCES */}
-      <div className="mx-auto max-w-7xl px-6 pb-16">
-        <div className="grid gap-6 md:grid-cols-3">
-          <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-            <h2 className="mb-3 text-xl font-semibold text-slate-900">
-              À propos
-            </h2>
-            <p className="text-slate-600 leading-7">
-              Je suis étudiante en programmation et je développe des projets
-              web et desktop qui combinent design, logique métier et bases de
-              données.
-            </p>
-          </div>
+      <div className="mx-auto max-w-7xl px-6 pb-20">
+  <div className="rounded-[32px] bg-white p-8 shadow-sm ring-1 ring-slate-200 md:p-10">
+    <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-sky-700">
+      Expérience
+    </p>
 
-          <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-            <h2 className="mb-3 text-xl font-semibold text-slate-900">
-              Frontend
-            </h2>
-            <p className="text-slate-600 leading-7">
-              Création d’interfaces modernes et responsive avec Next.js, React,
-              Tailwind CSS, JavaScript et EJS.
-            </p>
-          </div>
+    <h2 className="mb-6 text-2xl font-bold text-slate-900">
+      Stage COOP - ESDC
+    </h2>
 
-          <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-            <h2 className="mb-3 text-xl font-semibold text-slate-900">
-              Backend & données
-            </h2>
-            <p className="text-slate-600 leading-7">
-              Développement de logique backend, API et gestion des données avec
-              Node.js, SQL, SQLite, C# et architecture MVVM.
-            </p>
-          </div>
+    <div className="grid gap-8 md:grid-cols-[220px_minmax(0,1fr)]">
+      <div>
+        <p className="text-sm font-semibold text-slate-500">
+          Janvier 2025 - Mars 2026
+        </p>
+      </div>
+
+      <div>
+        <h3 className="mb-3 text-xl font-semibold text-slate-900">
+          Analyste de données - Gatineau,QC
+        </h3>
+
+        <p className="mb-5 leading-8 text-slate-600">
+          Réalisation d’un stage COOP au sein de la ESDC (Emploi et Développement social Canada) où j’ai participé à la
+          création et à l’adaptation de formulaires XML, aux tests de
+          fonctionnalités et à l’organisation de processus administratifs.
+        </p>
+
+        <div className="flex flex-wrap gap-3">
+          <span className="rounded-full bg-sky-50 px-4 py-2 text-sm font-medium text-sky-700">
+            XML
+          </span>
+          <span className="rounded-full bg-sky-50 px-4 py-2 text-sm font-medium text-sky-700">
+            XMLSpy
+          </span>
+          <span className="rounded-full bg-sky-50 px-4 py-2 text-sm font-medium text-sky-700">
+            Tests fonctionnels
+          </span>
+          <span className="rounded-full bg-sky-50 px-4 py-2 text-sm font-medium text-sky-700">
+            Validation de données
+          </span>
+          <span className="rounded-full bg-sky-50 px-4 py-2 text-sm font-medium text-sky-700">
+            Processus administratifs
+          </span>
         </div>
       </div>
+    </div>
+  </div>
+</div>
     </section>
   );
 }
