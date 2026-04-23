@@ -30,6 +30,7 @@ On démarre le projet avec 'npm run dev'
 - SQLite
 - JWT
 - bcryptjs
+- Postman pour tester (https://abileneahue-7158764.postman.co/workspace/Abil%C3%A8ne-Ahu%C3%A9's-Workspace~f8925f41-79a5-4dc5-8571-820e3c293ec3/collection/52117415-3855de43-a1a4-408b-a973-1c0667dcc4bd?action=share&source=copy-link&creator=52117415)
 
 ---
 
