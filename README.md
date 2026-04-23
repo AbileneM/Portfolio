@@ -30,6 +30,7 @@ On démarre le projet avec 'npm run dev'
 - SQLite
 - JWT
 - bcryptjs
+- Postman pour tester (https://abileneahue-7158764.postman.co/workspace/Abil%C3%A8ne-Ahu%C3%A9's-Workspace~f8925f41-79a5-4dc5-8571-820e3c293ec3/collection/52117415-3855de43-a1a4-408b-a973-1c0667dcc4bd?action=share&source=copy-link&creator=52117415)
 
 ---
 
@@ -57,6 +58,10 @@ On démarre le projet avec 'npm run dev'
 
 ### 3. Projets
 - récupération dynamique des projets depuis le backend
+  <img width="518" height="356" alt="projet" src="https://github.com/user-attachments/assets/e59c917a-b205-4f1c-b5ff-3a3b6900b5e6" />
+  <img width="628" height="423" alt="postman" src="https://github.com/user-attachments/assets/9f00eaab-e25a-4d5d-ace2-bc46601244e2" />
+  <img width="884" height="495" alt="projets" src="https://github.com/user-attachments/assets/047be2a6-ee95-4210-8d70-fb2d4ef60a5e" />
+
 - affichage sous forme de cartes
 - page de détail pour chaque projet
 - technologies utilisées visibles
